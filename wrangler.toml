@@ -1,0 +1,9 @@
+name = "masterwahyan-web"
+type = "javascript"
+compatibility_date = "2026-04-02"
+
+[env.production]
+routes = [
+  { pattern = "masterwahyan.com", zone_name = "masterwahyan.com" },
+  { pattern = "*.masterwahyan.com", zone_name = "masterwahyan.com" }
+]
