@@ -16,7 +16,7 @@ Deploy target: Cloudflare Pages → masterwahyan.com
 - **framer-motion v12** — causes fatal module init crash (`Cannot read properties of undefined (reading 'S')`). The entire React tree fails to mount. Removed completely; use CSS keyframe animations instead.
 - **create-vite latest (v9+)** — requires Node >=20.19.0. Use `create-vite@5` with Node 20.11.
 - **shadcn-ui CLI** — peer dep conflicts with React 18 + this stack. Install Radix UI primitives directly instead.
-- **Three.js / @react-three/fiber v9 + @react-three/drei v10** — SolarSystem component exists but is excluded from App.tsx. Hero now uses pure CSS planet orbits instead (HeroStatic.tsx). Do not re-add Three.js hero without explicit testing.
+- **Three.js / @react-three/fiber / @react-three/drei** — Removed completely (2026-04-03). Hero uses pure CSS planet orbits (HeroStatic.tsx). SolarSystem.tsx, HeroSection.tsx, ErrorBoundary.tsx deleted.
 
 ## Animations
 All scroll/entrance animations use plain CSS keyframes defined in `src/index.css`:
