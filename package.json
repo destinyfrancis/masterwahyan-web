@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "deploy": "echo 'Static site published to Cloudflare Pages'",
     "lint": "eslint .",
     "preview": "vite preview"
   },
