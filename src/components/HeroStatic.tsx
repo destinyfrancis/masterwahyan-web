@@ -2,13 +2,14 @@ import { ChevronDown } from 'lucide-react'
 import { WHATSAPP_URL } from '../lib/utils'
 
 // planet: [orbitDiameter, planetSize, color, duration, delayOffset]
+// Sizes use sqrt-compressed scale to be approximately proportional while visually balanced
 const planets: [number, number, string, number, number][] = [
-  [130,  5,  '#B5B5B5', 3,  0],     // Mercury
-  [190,  6,  '#E8C97B', 7,  -2.1],  // Venus
-  [260,  6,  '#4B9CD3', 12, -4.0],  // Earth
-  [340,  5,  '#C1440E', 20, -6.5],  // Mars
-  [440,  10, '#C88B3A', 45, -15.0], // Jupiter
-  [550,  9,  '#E4D191', 90, -30.0], // Saturn
+  [140,  6,  '#B5B5B5', 3,  0],     // Mercury
+  [200,  10, '#E8C97B', 7,  -2.1],  // Venus
+  [270,  11, '#4B9CD3', 12, -4.0],  // Earth
+  [350,  8,  '#C1440E', 20, -6.5],  // Mars (smaller than Earth)
+  [470,  26, '#C88B3A', 45, -15.0], // Jupiter (largest planet, ~2.4x Earth)
+  [590,  22, '#E4D191', 90, -30.0], // Saturn (2nd largest, with muted ring color)
 ]
 
 export default function HeroStatic() {
@@ -49,12 +50,12 @@ export default function HeroStatic() {
         aria-hidden="true"
         style={{ top: '50%', left: '50%', width: 0, height: 0 }}
       >
-        {/* Sun */}
+        {/* Sun (compressed scale — visually dominant) */}
         <div
           style={{
             position: 'absolute',
-            width: '14px',
-            height: '14px',
+            width: '40px',
+            height: '40px',
             background: '#FDB813',
             borderRadius: '50%',
             transform: 'translate(-50%, -50%)',
@@ -114,9 +115,9 @@ export default function HeroStatic() {
       </div>
 
       {/* Text content */}
-      <div className="relative z-10 flex flex-col items-center">
+      <div className="relative z-10 flex flex-col items-center -mt-4">
         {/* Profile Image */}
-        <div className="mb-8 animate-fade-rise">
+        <div className="mb-6 animate-fade-rise">
           <img
             src="/profile.jpg"
             alt="Master Wahyan"
