@@ -56,7 +56,7 @@ export default function ServicesSection() {
           <p className="text-xs tracking-[0.3em] uppercase mb-3 font-body font-medium" style={{ color: '#C9A96E' }}>
             SERVICES
           </p>
-          <h2 className="text-4xl sm:text-5xl text-foreground" style={{ fontFamily: 'Instrument Serif, serif' }}>
+          <h2 className="text-4xl sm:text-5xl text-foreground" style={{ fontFamily: 'Playfair Display, serif' }}>
             命理服務
           </h2>
           <div className="w-16 h-px mx-auto mt-4" style={{ backgroundColor: '#C9A96E' }} />
@@ -79,7 +79,7 @@ export default function ServicesSection() {
                   最受歡迎
                 </span>
               )}
-              <h3 className="text-xl text-foreground mb-1" style={{ fontFamily: 'Instrument Serif, serif' }}>
+              <h3 className="text-xl text-foreground mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
                 {service.title}
               </h3>
               <p className="text-xs font-body mb-3" style={{ color: '#C9A96E' }}>{service.subtitle}</p>
@@ -87,7 +87,7 @@ export default function ServicesSection() {
                 {service.description}
               </p>
               <div className="mb-4">
-                <span className="text-4xl" style={{ fontFamily: 'Instrument Serif, serif', color: '#C9A96E' }}>
+                <span className="text-4xl" style={{ fontFamily: 'Playfair Display, serif', color: '#C9A96E' }}>
                   {service.price}
                 </span>
               </div>

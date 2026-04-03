@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
           </p>
           <h2
             className="text-4xl sm:text-5xl text-foreground"
-            style={{ fontFamily: 'Instrument Serif, serif' }}
+            style={{ fontFamily: 'Playfair Display, serif' }}
           >
             客戶回饋
           </h2>
@@ -72,13 +72,6 @@ export default function TestimonialsSection() {
               key={idx}
               className="bg-white rounded-2xl p-8 shadow-sm border border-border flex flex-col"
             >
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} style={{ color: '#C9A96E' }}>★</span>
-                ))}
-              </div>
-
               {/* Quote */}
               <p className="text-sm text-muted-foreground leading-relaxed font-body flex-grow">
                 {t.text}
@@ -88,7 +81,7 @@ export default function TestimonialsSection() {
               <div className="flex items-center gap-3 mt-6">
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center text-white font-display text-base flex-shrink-0"
-                  style={{ backgroundColor: '#C9A96E', fontFamily: 'Instrument Serif, serif' }}
+                  style={{ backgroundColor: '#C9A96E', fontFamily: 'Playfair Display, serif' }}
                 >
                   {t.initials}
                 </div>

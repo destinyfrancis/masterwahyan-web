@@ -27,11 +27,13 @@ All scroll/entrance animations use plain CSS keyframes defined in `src/index.css
 - `.animate-scroll-bounce` — infinite bounce for scroll indicator
 - `.animate-wa-ping` — WhatsApp button pulse ring
 - `orbit-spin` — CSS keyframe for planetary orbits (6 planets, staggered delays, GPU-accelerated with `willChange: transform`)
+- `.animate-twinkle-fast` / `.animate-twinkle-slow` / `.animate-twinkle-delayed` / `.animate-twinkle-normal` — star breathing/fading effects
 
 ## Contact Links (src/lib/utils.ts)
 - WhatsApp: `https://wa.me/message/3CH6O4BQWF7CO1`
 - Instagram: `https://www.instagram.com/masterwahyan/`
-- App Store: placeholder `https://apps.apple.com/app/id1234567890`
+- SoundScribe App Store: `https://apps.apple.com/gb/app/soundscribe-ai-transcribe/id6760260471?mt=12` (hardcoded in AppShowcase.tsx)
+  - Bazi Master Pro App Store URL: placeholder, replace when live
 
 ## Color Palette
 - Gold: `#C9A96E`
@@ -61,7 +63,8 @@ src/
     HeroSection.tsx       — Three.js hero wrapper (EXCLUDED, keep for future reference)
     ErrorBoundary.tsx     — class-based error boundary for Three.js
     ServicesSection.tsx   — 6 pricing cards
-    AppShowcase.tsx       — Bazi Master Pro app mockup
+    AppShowcase.tsx       — 2 apps: Bazi Master Pro (JS perspective carousel with 5 images, auto-scroll, dot pagination)
+                            + SoundScribe Mac app (logo, full description, features list, screenshot, Mac App Store link)
     FAQSection.tsx        — custom accordion, no framer-motion
     TestimonialsSection.tsx
     Footer.tsx
@@ -88,16 +91,26 @@ Defined as `.liquid-glass` in `index.css`. Used on Navigation when over dark her
 
 ## CSS Solar System Implementation (HeroStatic.tsx)
 Pure CSS planet orbits with 6 planets:
-- **Mercury** (3s orbit, 5px blue)
-- **Venus** (7s orbit, 6px yellow)
-- **Earth** (12s orbit, 6px blue)
-- **Mars** (20s orbit, 5px red)
-- **Jupiter** (45s orbit, 10px orange)
-- **Saturn** (90s orbit, 9px pale-yellow)
+- **Mercury** (3s orbit, 8px silver)
+- **Venus** (7s orbit, 14px gold)
+- **Earth** (10s orbit, 16px blue)
+- **Mars** (18s orbit, 12px red)
+- **Jupiter** (35s orbit, 20px orange)
+- **Saturn** (70s orbit, 16px pale-yellow)
 
 Each planet wraps in a div with `orbit-spin` animation (defined in index.css) and staggered `animationDelay` for visual variety. All use `willChange: transform` for GPU acceleration → zero jank.
 
 Sun positioned at center with gold glow. Orbital rings rendered as static 1px borders for reference.
+
+## Hero Parallax (HeroStatic.tsx, updated 2026-04-03)
+5-layer parallax on scroll — each layer moves at different speed via `requestAnimationFrame`:
+1. **星星** — `scrollY * -0.05` (most background)
+2. **太陽軌道** — `scrollY * -0.12`
+3. **大頭相** — `scrollY * -0.25`
+4. **標題文字** — `scrollY * -0.35`
+5. **CTA 按鈕** — `scrollY * -0.5` (most foreground)
+
+Stars: 120 dots, multiple twinkle keyframe classes (fast/slow/delayed/normal) for breathing effect.
 
 ## Testimonials & Profile Update (2026-04-02)
 

@@ -40,7 +40,7 @@ export default function Footer() {
           <div>
             <p
               className="text-2xl text-gold"
-              style={{ fontFamily: 'Instrument Serif, serif', color: '#C9A96E' }}
+              style={{ fontFamily: 'Playfair Display, serif', color: '#C9A96E' }}
             >
               Master Wahyan
             </p>
@@ -113,7 +113,7 @@ export default function Footer() {
               className="mt-6 block w-full text-center rounded-full px-6 py-3 text-sm border font-body font-medium transition-all hover:bg-gold hover:text-white"
               style={{ borderColor: '#C9A96E', color: '#C9A96E' }}
             >
-              WhatsApp 立即咨詢
+              WhatsApp 立即諮詢
             </a>
           </div>
         </div>

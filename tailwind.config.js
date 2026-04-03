@@ -18,7 +18,7 @@ export default {
         border: 'hsl(220 10% 88%)',
       },
       fontFamily: {
-        display: ['"Instrument Serif"', 'serif'],
+        display: ['"Playfair Display"', 'serif'],
         body: ['"Inter"', 'sans-serif'],
         sans: ['"Inter"', 'sans-serif'],
       },

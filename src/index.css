@@ -14,7 +14,7 @@
   --accent: 38 52% 55%;
   --hero-bg: 220 30% 6%;
 
-  --font-display: 'Instrument Serif', serif;
+  --font-display: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
 
   font-family: 'Inter', sans-serif;
@@ -143,10 +143,52 @@ a {
 
 /* Font display class */
 .font-display {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 /* Solar system orbit spin */
 @keyframes orbit-spin {
   to { transform: rotate(360deg); }
+}
+
+/* Sun pulse glow */
+@keyframes sun-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 40px rgba(253,184,19,0.5),
+      0 0 80px rgba(253,184,19,0.3),
+      0 0 120px rgba(253,184,19,0.15),
+      0 0 160px rgba(253,184,19,0.08),
+      inset 0 0 20px rgba(255,220,100,0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 50px rgba(253,184,19,0.7),
+      0 0 100px rgba(253,184,19,0.4),
+      0 0 150px rgba(253,184,19,0.2),
+      0 0 200px rgba(253,184,19,0.1),
+      inset 0 0 30px rgba(255,220,100,0.6);
+  }
+}
+
+.animate-sun-pulse {
+  animation: sun-pulse 4s ease-in-out infinite;
+}
+
+/* Star twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.animate-twinkle-slow {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.animate-twinkle-fast {
+  animation: twinkle 3s ease-in-out 1s infinite;
+}
+
+.animate-twinkle-delayed {
+  animation: twinkle 5s ease-in-out 2s infinite;
 }

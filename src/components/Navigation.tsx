@@ -53,8 +53,8 @@ export default function Navigation() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isHeroVisible
-            ? 'liquid-glass'
-            : 'bg-white/95 backdrop-blur-md shadow-sm border-b border-border'
+            ? 'liquid-glass text-white'
+            : 'bg-white/95 backdrop-blur-md shadow-sm border-b border-border text-foreground'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -66,7 +66,7 @@ export default function Navigation() {
           >
             <span
               className="font-display text-2xl text-gold tracking-wide"
-              style={{ fontFamily: 'Instrument Serif, serif' }}
+              style={{ fontFamily: 'Playfair Display, serif' }}
             >
               Master Wahyan
             </span>
@@ -87,8 +87,11 @@ export default function Navigation() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-sm font-body font-medium transition-colors hover:text-gold ${
-                  isHeroVisible ? 'text-white/80' : 'text-foreground'
+                  isHeroVisible ? 'text-white' : 'text-[#2a2a3a]'
                 }`}
+                style={{
+                  textShadow: isHeroVisible ? '0 1px 3px rgba(0,0,0,0.5)' : 'none',
+                }}
               >
                 {link.label}
               </a>
@@ -124,9 +127,9 @@ export default function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center bg-gold text-white rounded-full px-5 py-2 text-sm font-display hover:brightness-110 hover:scale-[1.02] transition-all"
-              style={{ fontFamily: 'Instrument Serif, serif' }}
+              style={{ fontFamily: 'Playfair Display, serif' }}
             >
-              預約咨詢
+              預約諮詢
             </a>
             <button
               className={`md:hidden transition-colors ${
@@ -158,7 +161,7 @@ export default function Navigation() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className="text-2xl font-display text-white hover:text-gold transition-colors"
-                style={{ fontFamily: 'Instrument Serif, serif' }}
+                style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 {link.label}
               </a>
@@ -168,7 +171,7 @@ export default function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 bg-gold text-white rounded-full px-10 py-3 text-lg font-display hover:brightness-110 transition-all"
-              style={{ fontFamily: 'Instrument Serif, serif' }}
+              style={{ fontFamily: 'Playfair Display, serif' }}
               onClick={() => setMobileOpen(false)}
             >
               WhatsApp 預約
